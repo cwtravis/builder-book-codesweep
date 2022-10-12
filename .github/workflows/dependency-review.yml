@@ -8,11 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Run AppScan CodeSweep
         uses: HCL-TECH-SOFTWARE/appscan-codesweep-action@v2
         with:
           asoc_key: ${{secrets.ASOC_KEY_ID}}
           asoc_secret: ${{secrets.ASOC_KEY_SECRET}}
+          publish_on_merge: true
+          application_id: 7e786bf0-73ac-4389-9086-c3a2dd3aeff2
     env: 
       GITHUB_TOKEN: ${{secrets.GH_TOKEN}}

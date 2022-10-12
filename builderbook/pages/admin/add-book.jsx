@@ -12,6 +12,7 @@ class AddBook extends React.Component {
     NProgress.start();
 
     try {
+      //New COmmit change
       const book = await addBookApiMethod(data);
       notify('Saved');
       try {

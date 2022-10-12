@@ -13,6 +13,7 @@ class AddBook extends React.Component {
 
     try {
       //New COmmit change
+      const password = "password1234";
       const book = await addBookApiMethod(data);
       notify('Saved');
       try {
